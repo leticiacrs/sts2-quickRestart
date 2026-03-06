@@ -27,7 +27,21 @@ Adds a **"Retry"** button to the pause menu. Clicking it reads the game's own au
 3. 启动游戏
 
 > ⚠️ 开启 Mod 后游戏内会弹出一次 Waring，确认**会导致存档丢失**。
+> 
 > 按 **`` ` ``** 键打开控制台，输入 `unlock` 即可解锁全部内容继续爽玩。
+> 
+> 或者开启过 Mod 之后通过下面方法恢复您的存档：
+> 
+> 
+> 
+> 游戏的 Modded 模式会创建另一个 modded 存档文件夹
+> 
+> 您可以在 `{Steam 目录}/userdata/<SteamID>/2868840/` (Windows / Linux / macOS 均适用) 下看到 `profile1 2 3` 和 `modded` 一个文件夹
+> 
+> 将 `profile1` 复制到 `modded` 中覆盖原文件夹，即可恢复存档。
+> 
+> 这其实是 Steam 云同步目录。因此在您回到 Steam 之后，Steam 会提示 `云冲突`，选择 `保留本地文件` 即可。
+
 
 ---
 
@@ -38,7 +52,32 @@ Slay the Spire 2 officially supports modding with extensive hooks and Harmony in
 3. Launch the game and enable the mod
 
 > ⚠️ Enabling mods will trigger an in-game warning and confirm **will wipe your save**.
-> Press **`` ` ``** to open the console and type `unlock` to restore all unlocks。
+> 
+> Press **`` ` ``** to open the console and type `unlock` to restore all unlocks.
+> 
+> 
+> Alternatively, to recover your save after enabling mods:
+> 
+> The modded mode creates a separate save folder.
+>
+> You can find `profile1 2 3` and `modded` folders under `{Steam Directory}/userdata/<SteamID>/2868840/` (same for Windows / Linux / macOS).
+> 
+> Copy `profile1` into `modded`, overwriting the existing folder, to restore your save.
+> 
+> This is actually the Steam Cloud sync directory, so when you return to Steam, it will prompt a "Cloud Conflict" — choose "Keep Local Files" to finalize the restore.
+
+---
+
+
+# License
+
+Vibe Coding 参考的原始 Code Base 是 [erasels 的 QuickRestart](https://github.com/erasels/QuickRestart)
+
+原始 repo 是 Unlicense 的，因此本 repo 不添加 License。
+
+The original code base that Vibe Coding referenced is [erasels' QuickRestart](https://github.com/erasels/QuickRestart)
+
+The original repo is Unlicensed, so no license is also applied to this repo.
 
 ---
 
@@ -49,7 +88,7 @@ Slay the Spire 2 officially supports modding with extensive hooks and Harmony in
 
 **[ModTemplate-StS2](https://github.com/Alchyr/ModTemplate-StS2)**
 
-一个开箱即用的尖塔2 C# Mod 工程模板，内置 Harmony 补丁示例、构建脚本和基础目录结构，克隆后改改就能上手。
+一个开箱即用的尖塔2 C# Mod 工程模板，内置构建脚本和基础目录结构，克隆后改改就能上手。
 
 ---
 
@@ -57,4 +96,4 @@ Want to make your own mod? Check out the community template:
 
 **[ModTemplate-StS2](https://github.com/Alchyr/ModTemplate-StS2)**
 
-A ready-to-use C# mod project template for Slay the Spire 2. Includes Harmony patch examples, build scripts, and a standard folder layout — clone it and start hacking.
+A ready-to-use C# mod project template for Slay the Spire 2. Includes build scripts, and a standard folder layout — clone it and start hacking.
