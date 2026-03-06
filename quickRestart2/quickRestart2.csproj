@@ -43,7 +43,6 @@
         <Content Include="mod_manifest.json"/>
         <Content Include="project.godot"/>
         <Content Include="quickRestart2\**"/>
-        <Content Include="README.md" />
     </ItemGroup>
 
     <ItemGroup>

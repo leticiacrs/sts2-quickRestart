@@ -24,9 +24,9 @@ Adds a **"Retry"** button to the pause menu. Clicking it reads the game's own au
 
 1. 在游戏目录下创建 `mods` 文件夹
 2. 将 `.pck` 和 `.dll` 文件放入该文件夹
-3. 启动游戏并开启 Mod
+3. 启动游戏
 
-> ⚠️ 开启 Mod 后游戏内会弹出提示，并**会导致存档丢失**。
+> ⚠️ 开启 Mod 后游戏内会弹出一次 Waring，确认**会导致存档丢失**。
 > 按 **`` ` ``** 键打开控制台，输入 `unlock` 即可解锁全部内容继续爽玩。
 
 ---
@@ -37,5 +37,24 @@ Slay the Spire 2 officially supports modding with extensive hooks and Harmony in
 2. Drop the `.pck` and `.dll` files into it
 3. Launch the game and enable the mod
 
-> ⚠️ Enabling mods will trigger an in-game warning and **will wipe your save**.
+> ⚠️ Enabling mods will trigger an in-game warning and confirm **will wipe your save**.
 > Press **`` ` ``** to open the console and type `unlock` to restore all unlocks。
+
+---
+
+
+## Modder 指南 / For Modders
+
+想自己做 Mod？推荐参考 Alchyr 的样板，一键构建：
+
+**[ModTemplate-StS2](https://github.com/Alchyr/ModTemplate-StS2)**
+
+一个开箱即用的尖塔2 C# Mod 工程模板，内置 Harmony 补丁示例、构建脚本和基础目录结构，克隆后改改就能上手。
+
+---
+
+Want to make your own mod? Check out the community template:
+
+**[ModTemplate-StS2](https://github.com/Alchyr/ModTemplate-StS2)**
+
+A ready-to-use C# mod project template for Slay the Spire 2. Includes Harmony patch examples, build scripts, and a standard folder layout — clone it and start hacking.
