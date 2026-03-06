@@ -1,0 +1,65 @@
+﻿<Project Sdk="Godot.NET.Sdk/4.5.1">
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>true</ImplicitUsings>
+        <Nullable>enable</Nullable> <!--Makes code analysis regarding null values stricter.-->
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <GodotPath>/home/zed/.local/share/Steam/steamapps/common/Godot Engine/godot.x11.opt.tools.64</GodotPath>
+        <SteamLibraryPath>/home/zed/.local/share/Steam/steamapps</SteamLibraryPath>
+        <Sts2Path>$(SteamLibraryPath)/common/Slay the Spire 2</Sts2Path>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="0Harmony">
+            <HintPath>$(Sts2Path)/data_sts2_linuxbsd_x86_64/0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="sts2">
+            <HintPath>$(Sts2Path)/data_sts2_linuxbsd_x86_64/sts2.dll</HintPath>
+            <Publicize>True</Publicize> <!--Allows private/protected field references but may cause errors.-->
+        </Reference>
+        <Reference Include="BaseLib">
+            <HintPath>$(Sts2Path)/mods/BaseLib.dll</HintPath>
+        </Reference>
+
+        <PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="0.0.1"/>
+        <AdditionalFiles Include="quickRestart2\localization\**\*.json"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="quickRestart2\**"/>
+        <Compile Remove="materials\**"/>
+        <Compile Remove="shaders\**"/>
+        <Compile Remove="images\**"/>
+        <EmbeddedResource Remove="quickRestart2\**"/>
+        <EmbeddedResource Remove="materials\**"/>
+        <EmbeddedResource Remove="shaders\**"/>
+        <EmbeddedResource Remove="images\**"/>
+        <Compile Remove="sts2_src\**" />
+        <EmbeddedResource Remove="sts2_src\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include=".gitignore"/>
+        <Content Include="mod_manifest.json"/>
+        <Content Include="project.godot"/>
+        <Content Include="quickRestart2\**"/>
+        <Content Include="README.md" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.3">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <Target Name="CopyToModsFolderOnBuild" AfterTargets="PostBuildEvent">
+        <Message Text="Copying .dll to mods folder." Importance="high"/>
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(Sts2Path)\mods\"/>
+    </Target>
+
+    <Target Name="GodotPublish" AfterTargets="Publish">
+        <Message Text="Exporting Godot .pck to mods folder" Importance="high"/>
+        <Exec Command="&quot;$(GodotPath)&quot; --headless --export-pack &quot;Windows Desktop&quot; &quot;$(Sts2Path)/mods/$(MSBuildProjectName).pck&quot; --pck-export-version 3.4.5.1" ContinueOnError="WarnAndContinue"/>
+    </Target>
+</Project>
