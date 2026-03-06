@@ -10,7 +10,7 @@ using MegaCrit.Sts2.Core.Saves;
 namespace quickRestart2;
 
 /// <summary>
-/// Harmony patch that adds a "重打" (Retry) button to the pause menu.
+/// Harmony patch that adds a localized retry button to the pause menu.
 /// The button reloads the game's autosave, effectively restarting the current fight.
 /// </summary>
 [HarmonyPatch(typeof(NPauseMenu), nameof(NPauseMenu._Ready))]
@@ -29,10 +29,11 @@ public static class PauseMenuPatch
             Control buttonContainer = __instance.GetNode<Control>("%ButtonContainer");
             NPauseMenuButton saveAndQuitButton = buttonContainer.GetNode<NPauseMenuButton>("SaveAndQuit");
 
-            // Duplicate an existing button as our "重打" button
+            // Duplicate an existing button as our localized retry button
             NPauseMenuButton retryButton = (NPauseMenuButton)saveAndQuitButton.Duplicate();
             retryButton.Name = "Retry";
-            retryButton.GetNode<MegaLabel>("Label").SetTextAutoSize("重打");
+            retryButton.GetNode<MegaLabel>("Label")
+                .SetTextAutoSize(ModLocalization.Get("pause_menu.retry", "Retry"));
 
             // Insert before GiveUp
             NPauseMenuButton giveUpButton = buttonContainer.GetNode<NPauseMenuButton>("GiveUp");
@@ -85,4 +86,3 @@ public static class PauseMenuPatch
         }
     }
 }
-
