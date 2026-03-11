@@ -106,3 +106,23 @@ public static class PauseMenuPatch
         }
     }
 }
+
+/// <summary>
+/// Harmony patch that disables all pause menu buttons (including the Retry button)
+/// when Save&Quit is pressed, ensuring consistent highlight behavior.
+/// </summary>
+[HarmonyPatch(typeof(NPauseMenu), "CloseToMenu")]
+public static class SaveAndQuitDisablePatch
+{
+    [HarmonyPostfix]
+    public static void Postfix(NPauseMenu __instance)
+    {
+        // Disable all buttons in the container, including our Retry button
+        Control buttonContainer = __instance.GetNode<Control>("%ButtonContainer");
+        foreach (Node child in buttonContainer.GetChildren())
+        {
+            if (child is NPauseMenuButton btn)
+                btn.Disable();
+        }
+    }
+}
